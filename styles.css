@@ -1,0 +1,25 @@
+/* Place your CSS styles in this file */
+
+h1 {
+    text-align:center;
+    font-family: "Source Sans Pro", Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: black;
+    }
+    
+body {background-color: antiquewhite;}
+
+ul{list-style-type: none;
+background-color: burlywood;
+border : 4pxsold palevioletred
+}
+
+marquee {font-size:12px;
+}
+
+.p2{text-align: center;
+}
+
+li {display:inline;
+}
+
