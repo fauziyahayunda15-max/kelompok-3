@@ -4,14 +4,18 @@ h1 {
     text-align:center;
     font-family: "Source Sans Pro", Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
-    color: black;
+    color: palevioletred;
     }
     
-body {background-color: antiquewhite;}
+body {background-image: url('paper.gif');}
 
 ul{list-style-type: none;
-background-color: burlywood;
+background-color: bisque;
 border : 4pxsold palevioletred
+}
+
+li{list-style-type:none;
+color: palevioletred;
 }
 
 marquee {font-size:12px;
@@ -22,4 +26,5 @@ marquee {font-size:12px;
 
 li {display:inline;
 }
+
 
