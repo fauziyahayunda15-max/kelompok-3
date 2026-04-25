@@ -1,38 +1,91 @@
-/* Place your CSS styles in this file */
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('paper.gif');
+}
 
-         body {background-image: url('paper.gif');}
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+}
 
- body ul {list-style-type: none;
- background-color: brown;
- border: 4pxsold;}
+.menu li {
+    margin: 0;
+}
 
- li a {display: inline-block
- justify-content: flex-start;
- align-items: center;
- color: antiquewhite; 
- text-align: left;
- margin: 0 ;
- border: none;
- font-size: 18px;
- font-weight: bold;}
+.menu li a {
+    display: block;
+    padding: 14px 25px;
+    color: antiquewhite;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-iframe {width: 100%;
-height: 100%;
-aspect-ratio: 16 / 9;
-border: none;
-display: block;
-margin-bottom: -5px;
-overflow: hidden;
-border-radius: 0 !important;}
+.menu li a:hover {
+    background-color: darkred;
+    color: white;
+}
 
-    body marquee{ margin-top: -10px;
-        background-color: brown;
-        color: antiquewhite;
-        padding: 10px;
-        font-weight: bold;
-        font-size: 14px;
-        letter-spacing: 1px;}
+.menu li a.active {
+    background-color: black;
+    color: white;
+}
 
+/* RESPONSIVE NAVBAR */
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
 
-                        
+    .menu li a {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* rasio 16:9 */
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(63,69,81,0.16);
+}
+
+.iframe-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+}
+
+.marquee-text {
+    background-color: brown;
+    color: antiquewhite;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+p a {
+    color: brown;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
