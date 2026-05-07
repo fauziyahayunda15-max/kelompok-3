@@ -1,26 +1,44 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('paper.gif');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),;
+    background-image: url(foto.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+/* BOX */
+.container {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.isi {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* MENU */
 .menu {
+    background: linear-gradient(to right, #c95a4a, #d96d5f);
     list-style: none;
     margin: 0;
-    padding: 0;
-    background-color: brown;
+    padding: 18px;
     display: flex;
     justify-content: center;
-}
-
-.menu li {
-    margin: 0;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .menu li a {
     display: block;
     padding: 14px 25px;
+    border-radius: 20px;
+    background-color: #d96d5f;
+    border: 2px dashed antiquewhite;
     color: antiquewhite;
     text-decoration: none;
     font-size: 18px;
@@ -29,16 +47,14 @@ body {
 }
 
 .menu li a:hover {
+    transform: scale(1.08);
     background-color: darkred;
     color: white;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px white;
 }
 
-.menu li a.active {
-    background-color: black;
-    color: white;
-}
-
-/* RESPONSIVE NAVBAR */
+/* RESPONSIVE */
 @media (max-width: 600px) {
     .menu {
         flex-direction: column;
@@ -50,19 +66,25 @@ body {
         text-align: center;
         border-top: 1px solid rgba(255,255,255,0.2);
     }
+
+    .menu li a.active {
+        background-color: black;
+        color: white;
+    }
 }
 
+/* IFRAME */
 .iframe-container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* rasio 16:9 */
+    padding-top: 56.25%;
     margin: 20px 0;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(63,69,81,0.16);
 }
 
-.iframe-container iframe {
+.iframe-container iframe { 
     position: absolute;
     width: 100%;
     height: 100%;
@@ -71,6 +93,7 @@ body {
     border: none;
 }
 
+/* TEXT */
 .marquee-text {
     background-color: brown;
     color: antiquewhite;
@@ -86,6 +109,6 @@ p a {
     text-decoration: none;
 }
 
-p a:hover {
+p a:hover { 
     text-decoration: underline;
 }
