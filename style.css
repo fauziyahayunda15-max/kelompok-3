@@ -4,12 +4,14 @@ html, body {
 }
 
 body {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),;
-    background-image: url(foto.jpg);
+    min-height: 100vh;
+    background: linear-gradient(rgba(45,22,22,0.55),rgba(45,22,22,0.55)),url(kopi.jpg.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    background-attachment: fixed;
+    font-family: 'poppins', sans-serif;
+    color: #fff5eb;
 }
 
 /* BOX */
@@ -23,7 +25,7 @@ body {
 
 /* MENU */
 .menu {
-    background: linear-gradient(to right, #c95a4a, #d96d5f);
+    background: linear-gradient(to right, #c57844, #693825);
     list-style: none;
     margin: 0;
     padding: 18px;
@@ -32,24 +34,26 @@ body {
     border-top: 3px solid #fff;
     border-bottom: 3px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    gap: 15px;
 }
 
 .menu li a {
     display: block;
     padding: 14px 25px;
     border-radius: 20px;
-    background-color: #d96d5f;
-    border: 2px dashed antiquewhite;
-    color: antiquewhite;
+    background-color: #c57844;
+    border: 2px dashed #693825;
+    color: burlywood;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
     transition: 0.3s;
+    margin: 0 10px;
 }
 
 .menu li a:hover {
     transform: scale(1.08);
-    background-color: darkred;
+    background-color: #c57844;
     color: white;
     letter-spacing: 2px;
     text-shadow: 0 0 10px white;
@@ -96,8 +100,8 @@ body {
 
 /* TEXT */
 .marquee-text {
-    background-color: #c95a4a;
-    color: antiquewhite;
+    background: linear-gradient(to right, #c57844, #693825);
+    color: rgb(240, 196, 140);
     padding: 12px;
     font-weight: bold;
     font-size: 14px;
@@ -106,16 +110,41 @@ body {
     border-bottom: 3px solid #fff;
 }
 
+h1 {
+    margin: 25px auto;
+    padding: 15px 30px;
+    width: fit-content;
+    background: #c57844;
+    border: 2px dashed white;
+    border-radius: 20px;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'poppins' sans-serif;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    animation: glow 2s infinite alternate naikTurun 3s ease-in-out;
+}
+
+
 h2 {
+    border: 2px dashed antiquewhite ;
+    border-radius: 15px;
+    background-color: #c57844;
+    color: white;
     letter-spacing: 2px;
     word-spacing: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    display: inline-block;
 }
 
 p {
     border:2px dashed antiquewhite;
     border-radius: 20px;
     padding: 15px;
-    background-color: brown;
+    background-color: #c57844;
     color: white;
     text-decoration: none;
     font-size: 24px;
