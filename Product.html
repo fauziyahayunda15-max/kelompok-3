@@ -8,10 +8,106 @@
 
 <body>
 
-
     <ul class="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="About.html">About Us</a></li>
         <li><a href="Design.html">Design</a></li>
         <li><a href="Product.html">Product</a></li>
     </ul>
+
+    <div class="card-kopi"
+         onclick="buildYourHealthyCoffee()">
+        <h1>Healthy Coffe</h1>
+        <p>Yuk, buat kopi favoritmu dengan topping pilihanmu</p>
+    </div>
+
+    <script>
+
+    function buildYourHealthyCoffee() {
+
+        alert("Selamat datang di Build Your Healthy Coffe!");
+
+        alert("=== Build Your Healthy Coffee ===");
+
+        let nama = prompt("Masukin nama kamu:");
+
+        alert(
+            "Hai " + nama +
+            "\nSelamat datang di game kopi sehat!" +
+            "\nYuk bikin kopi favorit kamu~"
+        );
+
+        let kopi = prompt(
+            "Pilih jenis kopi:\n" +
+            "1. Espresso\n" +
+            "2. Latte\n" +
+            "3. Americano"
+        );
+
+        alert("Sekarang pilih toppingnya yaa");
+
+        let gula = parseInt(prompt("Berapa sendok gula?"));
+        let susu = prompt("Pakai susu? (ya/tidak)");
+        let cream = prompt("Tambah cream? (ya/tidak)");
+        let boba = prompt("Tambah boba? (ya/tidak)");
+
+        let hasil = "=== Hasil Kopi Kamu ===\n\n";
+
+        if (kopi === "1") {
+            hasil += "Kopi pilihan: Espresso\n";
+        } else if (kopi === "2") {
+            hasil += "Kopi pilihan: Latte\n";
+        } else if (kopi === "3") {
+            hasil += "Kopi pilihan: Americano\n";
+        } else {
+            hasil += "Pilihan kopi tidak ada\n";
+        }
+
+        if (gula <= 2) {
+            hasil += "\nHealthy Coffee ⭐";
+            hasil += "\nKopi kamu masih aman buat diminum";
+        } else {
+            hasil += "\nToo Much Sugar ⚠️";
+            hasil += "\nWaduh gulanya kebanyakan nih";
+        }
+
+        if (cream.toLowerCase() === "ya" || boba.toLowerCase() === "ya") {
+            hasil += "\n\nTopping kamu bikin kopi makin manis 😆";
+        }
+
+        hasil += "\n\nTips:";
+        hasil += "\nJangan minum kopi terlalu malam ya, nanti susah tidur";
+
+        hasil += "\n\nMakasih udah main ☕";
+
+        alert(hasil);
+
+        // Kirim data ke Python (main.py)
+        fetch("/healthycoffee", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nama: nama,
+                kopi: kopi,
+                gula: gula,
+                susu: susu,
+                cream: cream,
+                boba: boba,
+                hasil: hasil
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Respon Python:", data);
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    }
+
+    </script>
+
+</body>
+</html>
